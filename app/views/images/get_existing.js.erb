@@ -1,0 +1,31 @@
+// Check if there is next page
+var items = "<%= @existing_images.length %>"
+
+if (items == 0) {
+
+	alert('Nothing more in your folder.');
+	$('.image_more').remove();
+
+} else {
+
+	// Get 10 existing images
+	var existing_image = "<%= j render partial: 'image_in_widget', collection: @existing_images, as: :image %>";
+	$('.existing_images').append(existing_image);
+	// Create next link
+	var current_user = "<%= current_user.id %>";
+	var next_page = "<%= params[:page].to_i + 1 %>";
+	var next_link = '<a data-remote="true" href="/images/' + current_user + '/get_existing?page=' + next_page + '" class="btn btn-default image_more">More <span class="glyphicon glyphicon-hand-right"></span></a>';
+	$('.image_more').remove();
+	$('.existing_images').append(next_link);
+
+}
+
+
+
+
+
+
+
+
+
+

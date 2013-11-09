@@ -1,0 +1,26 @@
+<% provide(:title, 'Latest Post') %>
+
+<div class="content post">
+		
+	<% if params[:action] == "show_in_category" %>
+		<div class="panel panel-default">
+			<div class="panel-body">
+			Category:<%= category.name %> の記事一覧
+			</div>
+		</div>
+	<% end %>
+
+	<% if @posts.any? %>
+		<%= render partial: 'posts/posts', collection: @posts, as: :post %>
+		<%= will_paginate @posts, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+	<% else %>
+		<p class="lead">Not found.</p>
+		<%= link_to "Create New Post", new_post_path, class: "btn btn-default" %>
+	<% end %>
+
+</div><!-- /.content -->
+
+
+
+
+

@@ -1,0 +1,53 @@
+################################################
+### See http://help.github.com/ignore-files/ ###
+################################################
+
+
+# Ignore bundler config.
+# ---------------------------------------
+
+/.bundle
+
+
+# Ignore the default SQLite database.
+# ---------------------------------------
+
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+
+# Ignore all logfiles and tempfiles.
+# ---------------------------------------
+
+/log/*
+/tmp/*
+
+
+# Ignore all photos
+# ---------------------------------------
+
+/public/*
+
+
+# gnore list for Rails 
+# ---------------------------------------
+
+id_rsa_heroku
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+.rvmrc
+/vendor/bundle
+/coverage/
+/spec/tmp/*
+
+.keep
+
+# If the source is public
+# ---------------------------------------
+# .secret
+
+
+

@@ -1,0 +1,56 @@
+
+<!-- Modal -->
+<div class="modal fade" id="image_widget_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			  <span class="pull-right glyphicon glyphicon-remove" data-dismiss="modal" aria-hidden="true"></span>
+				<h4 class="modal-title" id="myModalLabel">Select Image</h4>
+			</div>
+			<div class="modal-body">
+				<div class="image_widget">
+					
+					<% # Buttons %>
+					<div class="action clearfix">
+						<%= link_to raw('<span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;My folder'),
+									get_existing_image_path(current_user.id, page: 1),
+									remote: true,
+									class: "btn btn-default my_folder" %>
+
+						<%= form_for Image.new, url: {controller: 'images', action: 'create'} do |f| %>
+							<div class="new_image">
+								<%= f.file_field :image, multiple: true, name: "image[url]" %>
+								<%#= f.file_field :image, class: "photo_btn without" %>
+								<div class="btn btn-default">
+									<span class="glyphicon glyphicon-cloud-upload"></span>
+									Upload
+								</div>
+							</div>
+						<% end %>
+					</div><!-- /.action -->
+
+
+					<% # Place for images %>
+					<div id="images" class="clearfix">
+						<%#= render partial: 'images/image_in_widget', collection: @images, as: :image %>	
+						<%#= will_paginate @images, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+						<div class="existing_images"></div>
+					</div>
+
+					<% # Template for progress bar %>
+					<script id="template-upload" type="text/x-tmpl">
+						<div class="uploading">
+							<div class="progress">
+								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+								</div>
+							</div>
+						</div>
+					</script>
+
+				</div><!-- /.image_widget -->
+
+
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

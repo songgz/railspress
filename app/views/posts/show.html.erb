@@ -1,0 +1,33 @@
+<% provide(:title, @post.title) %>
+
+<article class="content post">
+
+	<h2>
+		<%= @post.title %>
+		<%= raw('<span class="label label-default">draft</span>') unless @post.published? %>
+	</h2>
+
+	<hr>
+
+	<div>
+		<small class="time_ago pull-right"><%= time_ago_in_words(@post.created_at) %> ago</small>
+		<div class="tags">
+			<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), class: "label label-info" }.join(' ') %>
+		</div>
+	</div>
+
+	<% if signed_in? && current_user?(@post.user) %>
+		<div style="margin-bottom:10px;">
+			<small><%= link_to "Edit", edit_post_path(@post) %></small>
+			<small> | </small>
+			<small><%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" } %></small>
+		</div>
+	<% end %>
+
+	<div>
+		<%= render 'google/ad_300px_in_posts' %>
+	</div>
+	
+	<%= markdown @post.content %>
+
+</article><!-- ./content -->

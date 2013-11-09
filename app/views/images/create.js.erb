@@ -1,0 +1,7 @@
+<% if @image.new_record? %>
+	alert("Faild to upload: <%= j @image.error.full_messages.join(', ').html_safe %>");
+<% else %>
+	var new_image = "<%= j render partial: 'image_in_widget', object: @image, as: :image %>";
+	$('#images .thumb.wating:last').replaceWith(new_image);
+<% end %>
+

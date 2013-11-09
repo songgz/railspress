@@ -1,0 +1,10 @@
+<% if @related_posts.present? %>
+	<div class="related_posts">
+		<h4><span class="glyphicon glyphicon-comment c_pink"></span>&nbsp;&nbsp;関 連 記 事</h4>
+		<ul>
+			<% @related_posts.each do |post| %>
+				<li><%= link_to post.title, post %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
