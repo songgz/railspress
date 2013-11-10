@@ -20,6 +20,6 @@ production:
   encoding: utf8
   port: 5432
   pool: 25
-  database: 
-  password: 
-  username: 
+  database: devq77c1a1nvv8
+  password: 37lmw4Xws4nue7j11AOaA-WGbr
+  username: ryospsabqwnqdv
