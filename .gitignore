@@ -33,6 +33,7 @@
 # ---------------------------------------
 
 id_rsa_heroku
+id_rsa_heroku.pub
 *.rbc
 *.sassc
 .sass-cache
