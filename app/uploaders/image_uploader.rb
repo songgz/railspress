@@ -22,7 +22,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   def store_dir
   	time = Time.now
   	year = time.strftime("%Y")
-  	"images/#{year}/#{model.id}"
+  	"upload/#{year}/#{model.id}"
 	end
 
   # Process files as they are uploaded:
