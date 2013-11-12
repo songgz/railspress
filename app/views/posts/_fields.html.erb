@@ -6,7 +6,7 @@
 <div class="form-group col-md-6">
 	<% options = Category.all.map { |cat| [cat.name, cat.id] } %>
 	<%= f.label :category_id, "Category" %>
-	<%= f.select :category_id, options_for_select(options), {}, { class: "form-control" } %>
+	<%= f.select :category_id, options_for_select(options, @post.category_id), {}, { class: "form-control" } %>
 </div>
 
 <div class="clearfix"></div>

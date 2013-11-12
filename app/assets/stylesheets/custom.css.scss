@@ -351,6 +351,10 @@ $menu_height: 50px;
 	margin: 15px 5px;;
 }
 
+.article_body {
+	margin-top: 30px;
+}
+
 .content {
 	padding: 10px 0 0 0;
 	@media (min-width: $screen-sm) { padding: 10px; }
@@ -365,6 +369,10 @@ $menu_height: 50px;
 		font-size: 1.5em;
 		@media (min-width: $screen-sm) { font-size: 1.7em; }
 		margin-bottom: 5px;
+		.label {
+			font-size: 0.6em;
+			vertical-align: 0.2em;
+		}
 	}
 	/*h3 {
 		font-size: 1.5em;
@@ -394,11 +402,17 @@ $menu_height: 50px;
 			vertical-align: 0.2em;
 		}
 	}
+	h4.modal-title {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
 	h4 {
 		font-size: 1.2em;
 		padding: 5px 10px;
 		width: 60%;
 		border-bottom: 2px dotted lighten($c_pink, 20%);
+		margin-top: 30px;
 	}
 	.time_ago {
 		color: lighten($c_black, 40%);
@@ -503,6 +517,12 @@ $menu_height: 50px;
 		margin-bottom: 10px;
 	}
 	#images {
+		img {
+			background-color: transparent;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
 		.thumb {
 			@include thumb_format;
 			float: left;
