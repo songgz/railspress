@@ -1,6 +1,6 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://workabroad.jp"
-SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/workabroad/"
+SitemapGenerator::Sitemap.sitemaps_host = "http://workabroad.s3.amazonaws.com/"
 SitemapGenerator::Sitemap.public_path = 'public/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new

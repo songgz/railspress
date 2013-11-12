@@ -25,13 +25,17 @@ Railspress::Application.routes.draw do
 
   get 'tags/:tag',      to: 'posts#index',           as: :tag
 
+ # Redirect for google
+ # Need to be above get '/:id'
+  get 'sitemap', to: redirect('http://s3-ap-northeast-1.amazonaws.com/workabroad/sitemaps/sitemap.xml.gz')
+
   get 'tech/:id',       to: 'posts#show',            as: :tech
   get 'lifeabroad/:id', to: 'posts#show',            as: :lifeabroad
   get 'workabroad/:id', to: 'posts#show',            as: :workabroad
   get '/:id',           to: 'posts#show',            as: :page
   get 'category/:id',   to: 'categories#show_in_category', as: :category_in
 
-
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
