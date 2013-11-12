@@ -51,7 +51,6 @@ class PostsController < ApplicationController
 		@post.slug = nil if @post.slug == ''
 		if @post.save
 			flash[:info] = "Saved!"
-			create_sitemap
 			redirect_to user_path(current_user)
 		else
 			render 'new'
