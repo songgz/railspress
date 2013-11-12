@@ -68,7 +68,8 @@ ready = ->
 				caret_pos = getCaretPosition($('.post_content').get(0))
 				url = $('img', this).data('image-url')
 				alt = $('img', this).attr('alt')
-				tag = '<img src="'+url+'" alt="'+alt+'">\n'
+				tag = "![#{alt}](#{url})"
+				#tag = '<img src="'+url+'" alt="'+alt+'">\n'
 				#// Insert image tag
 				insertTextAtPosision($('.post_content').get(0), caret_pos, tag)
 
