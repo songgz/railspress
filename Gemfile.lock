@@ -193,6 +193,8 @@ GEM
       multi_json (~> 1.0)
       rubyzip (< 1.0.0)
       websocket (~> 1.0.4)
+    sitemap_generator (4.2.0)
+      builder
     slop (3.3.3)
     spork (1.0.0rc4)
     sprockets (2.10.0)
@@ -262,6 +264,7 @@ DEPENDENCIES
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.0)
   selenium-webdriver (~> 2.35.1)
+  sitemap_generator
   spork-rails!
   therubyracer
   turbolinks

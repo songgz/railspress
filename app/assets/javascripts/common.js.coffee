@@ -2,7 +2,7 @@ ready = ->
 
 	#// Sidebars
 	if $('.stick_div').length
-		if $('.page_main').height() > $('.sidebar').height()
+		if $('.page_main').height() > $('.sidebar').outerHeight(true)
 			affix_start = $('.sidebar').offset().top + $('.non_stick_div').height()
 			$('.stick_div').affix
 				offset:

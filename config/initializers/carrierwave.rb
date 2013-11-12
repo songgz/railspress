@@ -6,7 +6,7 @@ CarrierWave.configure do |config|
     :region                 => 'ap-northeast-1'
   }
   
-  config.fog_directory = 'workabroad-image' if Rails.env.production?
+  config.fog_directory = 'workabroad' if Rails.env.production?
   #config.fog_directory = 'workabroad-dev' if Rails.env.development?
 
 end
