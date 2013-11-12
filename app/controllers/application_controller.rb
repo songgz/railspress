@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
 	include SessionsHelper
 	include UsersHelper
+	include SitemapHelper
 	#include ImagesHelper
 
 end

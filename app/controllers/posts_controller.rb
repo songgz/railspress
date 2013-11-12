@@ -36,6 +36,9 @@ class PostsController < ApplicationController
 		@post.published = status
 		@post.slug = nil if @post.slug == ''
 		if @post.save
+			if status == true
+				create_sitemap # Recreate sitemap and send it.
+			end
 			flash[:info] = "Saved!"
 			redirect_to user_path(current_user)
 		else
@@ -47,7 +50,9 @@ class PostsController < ApplicationController
 		@post.attributes = strong_params
 		@post.slug = nil if @post.slug == ''
 		if @post.save
+			create_sitemap # Recreate sitemap and send it.
 			flash[:info] = "Saved!"
+			create_sitemap
 			redirect_to user_path(current_user)
 		else
 			render 'new'
@@ -57,6 +62,7 @@ class PostsController < ApplicationController
 	def destroy
 		flash[:info] = "Deleted."
 		@post.destroy
+		create_sitemap # Recreate sitemap and send it.
 		redirect_to user_path(current_user)
 	end
 

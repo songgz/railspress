@@ -1,16 +1,33 @@
 <% provide(:title, @post.title) %>
+<% provide(:meta_desc, html_escape(extracter(@post.content))[0,155]) %>
+
+<% provide(:og_title, @post.title) %>
+<% provide(:og_desc, html_escape(extracter(@post.content))[0,297]) %>
+
+<% provide(:twitter_desc, html_escape(extracter(@post.content))[0,200]) %>
+
 
 <article class="content post">
 
 	<h2>
-		<%= @post.title %>
+		<span itemprop="name headline"><%= @post.title %></span>
 		<%= raw('<span class="label label-default">draft</span>') unless @post.published? %>
 	</h2>
 
 	<hr>
 
 	<div>
-		<small class="time_ago pull-right"><%= time_ago_in_words(@post.created_at) %> ago</small>
+		<small class="time_ago pull-right">
+			<span datetime="<%= @post.created_at %>" itemprop="datePublished">
+				<%= time_ago_in_words(@post.created_at) %>
+			</span> ago
+			<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+				by 
+				<a href="https://twitter.com/shunwitter" itemprop="url" rel="author">
+					<%= @post.user.user_name %>
+				</a>
+			</span>
+		</small>
 		<div class="tags">
 			<%= raw @post.tag_list.map { |t| link_to t, tag_path(t), class: "label label-info" }.join(' ') %>
 		</div>
@@ -28,6 +45,9 @@
 		<%= render 'google/ad_300px_in_posts' %>
 	</div>
 	
-	<%= markdown @post.content %>
+	<div itemprop="articleBody">
+		<%= markdown @post.content %>
+	</div>
+	
 
 </article><!-- ./content -->
