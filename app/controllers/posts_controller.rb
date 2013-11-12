@@ -50,7 +50,6 @@ class PostsController < ApplicationController
 		@post.attributes = strong_params
 		@post.slug = nil if @post.slug == ''
 		if @post.save
-			create_sitemap # Recreate sitemap and send it.
 			flash[:info] = "Saved!"
 			create_sitemap
 			redirect_to user_path(current_user)
