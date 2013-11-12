@@ -30,7 +30,8 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  Post.find_each do |post|
+  posts = Post.where("published=?", true)
+  posts.each do |post|
     add post_path(post), :lastmod => post.updated_at
   end
 
