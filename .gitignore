@@ -26,7 +26,10 @@
 # Ignore all photos
 # ---------------------------------------
 
-/public/*
+/public/images/*
+/public/upload/*
+/public/uploads/*
+/public/wp-content/*
 
 
 # gnore list for Rails 
