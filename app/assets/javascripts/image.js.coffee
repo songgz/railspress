@@ -66,7 +66,7 @@ ready = ->
 			if !$(this).hasClass('wating')
 				#// Set URL to hidden tag
 				caret_pos = getCaretPosition($('.post_content').get(0))
-				url = $('img', this).data('image-url').gsub('workabroad.s3.amazonaws.com', 'image.workabroad.jp')
+				url = $('img', this).data('image-url').replace('workabroad.s3.amazonaws.com', 'image.workabroad.jp')
 				alt = $('img', this).attr('alt')
 				tag = "![#{alt}](#{url})"
 				#tag = '<img src="'+url+'" alt="'+alt+'">\n'
