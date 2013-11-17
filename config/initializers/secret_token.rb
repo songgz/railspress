@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Railspress::Application.config.secret_key_base = '9f991c179ac7cac3453878ba92e5610ba4b12092a5d61489ee8e576dbbbc795dd732f1d42b099163e3404fc71e6e27c28dbc652c3cefbf74f5348996f6125d45'
+Railspress::Application.config.secret_key_base = ENV['RP_SECRET_TOKEN']

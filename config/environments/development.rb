@@ -30,7 +30,7 @@ Railspress::Application.configure do
   ################
   ### For mail ###
   ################
-  config.action_mailer.default_url_options = { host: "workabroad.jp" }
+  config.action_mailer.default_url_options = { host: ENV['RP_HOSTNAME'] }
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -38,10 +38,10 @@ Railspress::Application.configure do
     port: 587,
     authentication: :login,
     enable_starttls_auto: true,
-    user_name: "polytechnics.shun@gmail.com",
-    # Need to make Application-specific passwords
-    # because of 2 steps authentication of gmail.
-    password: "wirclsehnhajgswm"
+    user_name: ENV['RP_EMAIL_ADDRESS'],
+    # Need to make Application-specific password.
+    # If you are using gmail 2 steps authentication.
+    password: ENV['RP_EMAIL_PASSWORD']
   }
 
 end

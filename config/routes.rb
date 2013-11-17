@@ -27,7 +27,7 @@ Railspress::Application.routes.draw do
 
  # Redirect for google
  # Need to be above get '/:id'
-  get 'sitemap', to: redirect('http://s3-ap-northeast-1.amazonaws.com/workabroad/sitemaps/sitemap.xml.gz')
+  get 'sitemap', to: redirect(RP_SITEMAP_URL)
 
   get 'tech/:id',       to: 'posts#show',            as: :tech
   get 'lifeabroad/:id', to: 'posts#show',            as: :lifeabroad

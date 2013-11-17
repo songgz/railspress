@@ -52,7 +52,7 @@ class CategoriesController < ApplicationController
 	private
 
 		def strong_params
-			params.require(:category).permit(:id, :user_id, :name, :slug)
+			params.require(:category).permit(:id, :user_id, :name, :slug, :menu, :order)
 		end
 
 		# Check if the user is the owner.

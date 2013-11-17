@@ -10,12 +10,12 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :set_content_type
 
   # Amazon S3
-  if Rails.env.production?
+  if Rails.env.production? or Rails.env.development?
     storage :fog
   end
 
   # Local strage
-  if Rails.env.test? or Rails.env.development?
+  if Rails.env.test?
     storage :file 
   end
 
@@ -35,10 +35,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     process :convert => 'jpg'
   end
 
-  version :md do
-    process :resize_to_limit => [300, 300]
-    process :convert => 'jpg'
-  end
+#  version :md do
+#    process :resize_to_limit => [300, 300]
+#    process :convert => 'jpg'
+#  end
 
   
 
@@ -58,7 +58,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def filename
     if original_filename.present?
-      filename = "workabroad.jpg"
+      filename = "#{ENV['RP_IMAGE_NAME']}.jpg"
     end
   end
 

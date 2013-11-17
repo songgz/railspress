@@ -5,12 +5,13 @@ CarrierWave.configure do |config|
 
   config.fog_credentials = {
     :provider               => 'AWS',
-    :aws_access_key_id      => 'AKIAIUAYFA3KZVSELF6A',
-    :aws_secret_access_key  => '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',
-    :region                 => 'ap-northeast-1'
+    :aws_access_key_id      => ENV['RP_AWS_KEY'],
+    :aws_secret_access_key  => ENV['RP_AWS_SECRET'],
+    :region                 => ENV['RP_AWS_REGION']
   }
 
   # Bucket name
-  config.fog_directory = 'workabroad'
+  config.fog_directory = ENV['RP_AWS_BUCKET']
   
 end
+

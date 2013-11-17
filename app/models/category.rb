@@ -6,10 +6,10 @@ class Category < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :slug
 
-	default_scope -> { order(:slug) }
+	default_scope -> { order(:order) }
 
 	# Validation
 	validates :name, presence: true
-	validates :slug, presence: true
+	validates :slug, presence: true, uniqueness: true
 
 end

@@ -7,23 +7,22 @@
 
   <!-- Start meta tags for SEO -->
   <!-- General -->
-  <!-- meta name="description" content="ワーキングホリデー年齢制限ギリギリでオーストラリアに渡ったデザイナーが、今度はドイツにほんとのギリホリ。英語やドイツ語や海外での生活や仕事、ウェブ開発の情報など。" -->
   <meta name="description" content="<%= yield(:meta_desc) %>">
   <!-- Google+ profile -->
-  <link rel="author" href="https://plus.google.com/108658989726284862749">
+  <link rel="author" href="https://plus.google.com/<%= RP_GOOGLE_PLUS_ID %>">
   <!-- Facebook -->
   <meta property="og:type" content="blog">
   <meta property="og:url" content="<%= request.url %>">
   <meta property="og:title" content="<%= yield(:og_title) %>">
   <meta property="og:description”" content="<%= yield(:og_desc) %>">
-  <meta property="fb:admins" content="100000134621172" />
-  <meta property="og:image" content="http://workabroad.jp/assets/logo_for_sns.gif">
+  <meta property="fb:admins" content="<%= RP_FACEBOOK_ADMIN_ID %>" />
+  <meta property="og:image" content="<%= RP_SITEURL %>/assets/logo_for_sns.gif">
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:url" content="<%= request.url %>">
   <meta name="twitter:title" content="<%= full_title(yield(:title)) %>">
   <meta name="twitter:description" content="<%= yield(:twitter_desc) %>">
-  <meta name="twitter:image" content="http://workabroad.jp/assets/logo_for_sns.gif">
+  <meta name="twitter:image" content="<%= RP_SITEURL %>/assets/logo_for_sns.gif">
   <!-- End meta tags -->
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -67,7 +66,7 @@
 <!-- google analytics -->
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-2140628-6']);
+  _gaq.push(['_setAccount', "<%= RP_GOOGLE_ANALYTICS_ID %>"]);
   _gaq.push(['_trackPageview']);
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

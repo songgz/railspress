@@ -12,9 +12,6 @@ ready = ->
 			dropZone: "#image_widget_modal",
 			disableImageResize: false,
 			maxFileSize: 5000000,
-			#//autoUpload: false,
-			#//disableImageResize: /Android(?!.*Chrome)|Opera/.test(window.navigator.userAgent),
-      #//acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
 			imageMaxWidth: 600,
 			imageMaxHeight: 600,
 			imageCrop: false,
@@ -64,13 +61,15 @@ ready = ->
 
 		$('#images').on 'click', '.thumb', (event) ->
 			if !$(this).hasClass('wating')
-				#// Set URL to hidden tag
+				#// Get current position
 				caret_pos = getCaretPosition($('.post_content').get(0))
-				url = $('img', this).data('image-url').replace('https', 'http').replace('workabroad.s3.amazonaws.com', 'image.workabroad.jp')
+				#// Modify URL if CNAME exist
+				url = $('img', this).data('image-url').replace('https', 'http')
+				if "<%= ENV['RP_IMAGE_HOST_CNAME'] %>"
+					url = url.replace("<%= ENV['RP_IMAGE_HOST'] %>", "<%= ENV['RP_IMAGE_HOST_CNAME'] %>")
+				#// Create and insert markdown image tag
 				alt = $('img', this).attr('alt')
 				tag = "![#{alt}](#{url})"
-				#tag = '<img src="'+url+'" alt="'+alt+'">\n'
-				#// Insert image tag
 				insertTextAtPosision($('.post_content').get(0), caret_pos, tag)
 
 	$('.my_folder').on 'click', (event) ->
