@@ -1,0 +1,25 @@
+<div class="each_post <%= "draft" unless post.published? %>">
+
+	<h3 class="post_title">
+		<%= link_to post.title, post_path(post) %>
+		<%= raw('<span class="label label-default">draft</span>') unless post.published? %>
+	</h3>
+	
+	<div class="clearfix">
+		<small class="time_ago pull-right"><%= time_ago_in_words(post.created_at) %> ago</small>
+		<div class="tags">
+			<%= raw post.tag_list.map { |t| link_to t, tag_path(t), class: "label label-info" }.join(' ') %>
+		</div>
+	</div>
+
+	<p class="intro"><%= wrap(html_escape(extracter(post.content)))[0,200]  %></p>
+
+	<% if signed_in? && current_user?(post.user) %>
+		<small><%= link_to "Edit", edit_post_path(post) %></small>
+		<small> | </small>
+		<small><%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" } %></small>
+	<% end %>
+
+</div>
+
+<hr>

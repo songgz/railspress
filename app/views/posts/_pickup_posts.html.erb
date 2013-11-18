@@ -1,0 +1,10 @@
+<% if @pickup_posts.present? %>
+	<div class="related_posts">
+		<h4><span class="glyphicon glyphicon-certificate c_pink"></span>&nbsp;人 気 記 事</h4>
+		<ul>
+			<% @pickup_posts.each do |post| %>
+				<li><%= link_to post.title, post %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>

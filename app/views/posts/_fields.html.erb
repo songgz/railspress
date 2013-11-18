@@ -1,0 +1,47 @@
+
+<div class="form-group col-md-12 error_message">
+	<%= render 'shared/error_messages', object: f.object %>
+</div>
+
+<div class="form-group col-md-6">
+	<% options = Category.all.map { |cat| [cat.name, cat.id] } %>
+	<%= f.label :category_id, "Category" %>
+	<%= f.select :category_id, options_for_select(options, @post.category_id), {}, { class: "form-control" } %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group col-md-12">
+	<%= f.label :title, "Title" %>
+	<%= f.text_field :title, class: "form-control" %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group col-md-12">
+	<%= f.label :tag_list, "Tags (separated by commas)" %>
+	<%= f.text_field :tag_list, class: "form-control" %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group col-md-12">
+	<%= f.label :content %>
+
+	<!-- Image attach format -->
+	<div class="btn btn-default btn-sm pull-right image_attach" data-toggle="modal" data-target="#image_widget_modal" style="margin-bottom: 3px;">
+		<span class="glyphicon glyphicon-picture"></span> Image
+	</div>
+	<!-- END Image attach format -->
+
+	<%= f.text_area :content, class: "form-control post_content" %>
+</div>
+
+<div class="form-group col-md-12">
+	<%= f.label :slug %>
+	<%= f.text_field :slug, class: "form-control" %>
+</div>
+
+<div class="clearfix"></div>
+
+<br>

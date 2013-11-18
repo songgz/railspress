@@ -1,0 +1,29 @@
+<% provide(:title, 'Edit Category') %>
+
+<div class="content post">
+
+	<h2>Edit Category</h2>
+	<hr>
+
+	<%= form_for(@category) do |f| %>
+
+		<div class="form">
+
+			<%= render 'fields', f: f  %>
+
+			<div class="form-group col-md-6 action">
+				<%= f.submit "Save", class: "btn btn-default" %>
+			</div>
+
+		</div><!-- /.form -->
+
+	<% end %>
+
+	<%#= render partial: 'images/widget' %>
+
+</div><!-- /.content -->
+
+
+
+
+

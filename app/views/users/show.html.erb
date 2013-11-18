@@ -1,0 +1,19 @@
+<% provide(:title, "(#{@user.user_name} Manage Posts") %>
+
+
+<div class="content user">
+	<h2>Manage Posts</h2>
+	<hr>
+
+	<h3 class="user_name"><%= @user.user_name %></h3>
+	<p><%= @user.email %></p>
+
+	<% if @posts.any? %>
+		<%= render partial: 'posts/posts', collection: @posts, as: :post %>
+		<%= will_paginate @posts, renderer: BootstrapPagination::Rails, bootstrap: 3 %>
+	<% else %>
+		<p class="lead">Not found.</p>
+		<%= link_to "Create New Post", new_post_path, class: "btn btn-default" %>
+	<% end %>
+
+</div><!-- ./content -->

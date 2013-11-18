@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Start meta tags for SEO -->
+  <!-- General -->
+  <meta name="description" content="<%= yield(:meta_desc) %>">
+  <!-- Google+ profile -->
+  <link rel="author" href="https://plus.google.com/<%= RP_GOOGLE_PLUS_ID %>">
+  <!-- Facebook -->
+  <meta property="og:type" content="blog">
+  <meta property="og:url" content="<%= request.url %>">
+  <meta property="og:title" content="<%= yield(:og_title) %>">
+  <meta property="og:description”" content="<%= yield(:og_desc) %>">
+  <meta property="fb:admins" content="<%= RP_FACEBOOK_ADMIN_ID %>" />
+  <% if RP_LOGOMARK %>
+  <meta property="og:image" content="<%= RP_SITEURL %>/assets/<%= RP_LOGOMARK %>">
+  <% end %>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="<%= request.url %>">
+  <meta name="twitter:title" content="<%= full_title(yield(:title)) %>">
+  <meta name="twitter:description" content="<%= yield(:twitter_desc) %>">
+  <meta name="twitter:image" content="<%= RP_SITEURL %>/assets/logo_for_sns.gif">
+  <!-- End meta tags -->
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+  <!-- For Google Analytics -->
+  <script src="//www.google.com/jsapi"></script>
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body itemscope="" itemtype="http://schema.org/BlogPosting">
+	<%= render 'layouts/header' %>
+	<div class="container">
+
+    <div class="row">
+
+      <section class="page_main col-md-8">
+        <%= render 'shared/flash_message' %>
+		    <%= yield %>
+      </section>
+
+      <aside class="sidebar col-md-4">
+        <%= render 'shared/sidebar' %>
+      </aside>
+
+    </div>
+	</div><!-- ./container -->
+
+  <%= render 'layouts/footer' %>
+
+  <% if Rails.env.development? %>
+    <%#= debug(params)  %>
+  <% end %>
+
+
+<!-- google analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', "<%= RP_GOOGLE_ANALYTICS_ID %>"]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

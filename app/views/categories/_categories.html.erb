@@ -1,0 +1,10 @@
+<tr>
+	<td><%= category.name %></td>
+	<td><%= category.slug %></td>
+	<td><%= category.menu %></td>
+	<td><%= category.order %></td>
+	<td>
+		<%= link_to "edit", edit_category_path(category) %> | 
+		<%= link_to "delete", category, method: :delete, data: { confirm: "You sure?"} %>
+	</td>
+</tr>

@@ -1,0 +1,30 @@
+<% provide(:title, 'New Post') %>
+
+<div class="content post">
+
+	<h2>New Post</h2>
+	<hr>
+
+	<%= form_for(@post) do |f| %>
+
+		<div class="form">
+
+			<%= render 'fields', f: f  %>
+
+			<div class="form-group col-md-6 action">
+				<%= f.submit "Publish Now", class: "btn btn-default", name: "new_post" %>
+				<%= f.submit "Draft", class: "btn btn-default", name: "draft_post" %>
+			</div>
+
+		</div><!-- /.form -->
+
+	<% end %>
+
+	<%= render partial: 'images/widget' %>
+
+</div><!-- /.content -->
+
+
+
+
+

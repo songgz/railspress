@@ -1,0 +1,26 @@
+
+development:
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  database: <%= ENV['RP_DB_DEV'] %>
+  username: <%= ENV['RP_DB_DEV_USERNAME'] %>
+  password: <%= ENV['RP_DB_DEV_PASSWORD'] %>
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  database: <%= ENV['RP_DB_TEST'] %>
+  username: <%= ENV['RP_DB_TEST_USERNAME'] %>
+  password: <%= ENV['RP_DB_TEST_PASSWORD'] %>
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  port: 5432
+  pool: 25
+  database: <%= ENV['RP_DB_PRODUCTION'] %>
+  password: <%= ENV['RP_DB_PRODUCTION_PASSWORD'] %>
+  username: <%= ENV['RP_DB_PRODUCTION_USERNAME'] %>
+

@@ -1,0 +1,26 @@
+<% provide(:title, 'Edit profile') %>
+
+<div class="content user">
+
+	<h2>Edit profile</h2>
+	<hr>
+	<%= form_for(@user) do |f| %>
+
+		<div class="form row">
+
+			<div class="form-group col-md-12">
+				<%= render 'shared/error_messages', object: f.object %>
+			</div>
+
+			<%= render 'fields', f: f %>
+			
+			<div class="form-group col-md-6 action">
+				<%= f.submit "Save changes", class: "btn btn-lg btn-default" %>
+			</div>
+		</div>
+	<% end %>
+
+</div><!-- ./content -->
+
+
+

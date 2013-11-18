@@ -1,0 +1,34 @@
+<% provide(:title, 'New Post') %>
+
+<div class="content post">
+
+	<h2>Edit Post</h2>
+	<hr>
+
+	<%= form_for(@post) do |f| %>
+
+		<div class="form">
+
+			<%= render 'fields', f: f  %>
+
+			<div class="form-group col-md-3">
+				<% options = {"Published" => true, "Draft" => false} %>
+				<%= f.select :published, options_for_select(options, @post.published), {}, { class: "form-control" } %>
+			</div>
+
+			<div class="form-group action">
+				<%= f.submit "Save", class: "btn btn-default" %>
+			</div>
+
+		</div><!-- /.form -->
+
+	<% end %>
+
+	<%= render partial: 'images/widget' %>
+
+</div><!-- /.content -->
+
+
+
+
+

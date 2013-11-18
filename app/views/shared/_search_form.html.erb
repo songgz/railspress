@@ -1,0 +1,19 @@
+<%= form_tag search_path, method: :get, class: "form-inline search_form", role: "form" do %>
+
+	<!--div class="options form-group clearfix" data-type="<%= session[:search_type] %>"  data-area="<%= session[:search_area] %>">
+		<div class="type all">
+			<label>
+		  		<%= radio_button_tag :type, "all" %> 
+		  		Keyword
+		  	</label>
+		</div>
+	</div -->
+
+	<div class="input-group">
+		<%= text_field_tag :query, params[:query], class: "form-control" %>
+		<span class="input-group-btn">
+			<%= submit_tag "SEARCH", name: nil, class: "btn btn-danger"  %>
+		</span>
+   </div>
+
+<% end %>

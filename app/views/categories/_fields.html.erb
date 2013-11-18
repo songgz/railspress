@@ -1,0 +1,34 @@
+
+<div class="form-group col-md-12 error_message">
+	<%= render 'shared/error_messages', object: f.object %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group col-md-6">
+	<%= f.label :name %>
+	<%= f.text_field :name, class: "form-control" %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group col-md-6">
+	<%= f.label :slug %>
+	<%= f.text_field :slug, class: "form-control" %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="form-group col-md-3">
+	<%= f.label :menu %>
+	<%= f.select :menu, options_for_select([['True', true], ['False', false]]), {}, { class: "form-control" } %>
+</div>
+
+<div class="form-group col-md-2">
+	<%= f.label :order %>
+	<%= f.number_field :order, class: "form-control" %>
+</div>
+
+<div class="clearfix"></div>
+
+<br>

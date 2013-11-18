@@ -1,0 +1,33 @@
+<% provide(:title, 'Password Reset') %>
+
+
+<div class="content user">
+
+	<h2>Password Reset</h2>
+	<hr>
+
+	<%= form_tag password_resets_path, method: :post do %>
+		<div class="form row">
+
+			<div class="form-group col-md-12">
+				<%= render 'shared/flash_message' %>
+			</div>
+
+			<div class="form-group col-md-6">
+				<%= label_tag 'email', "Please enter you email address." %>
+				<%= text_field_tag 'email', nil, class: "form-control" %>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="form-group col-md-12 action">
+				<%= submit_tag "Reset password", class: "btn btn-lg btn-success" %>
+			</div>
+			
+		</div><!-- /.form -->
+	<% end %>
+
+</div><!-- /.content -->
+
+
+

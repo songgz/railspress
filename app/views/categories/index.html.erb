@@ -1,0 +1,38 @@
+<% provide(:title, 'Category') %>
+
+<div class="content category">
+
+	<h2>
+		Category
+		<%= link_to "Add", new_category_path, class: "btn btn-default btn-sm" %>
+	</h2>
+	<hr>
+	<% if @categories.any? %>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Slug</th>
+					<th>Menu</th>
+					<th>Order</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render partial: 'categories', collection: @categories, as: :category %>
+			</tbody>
+		</table>
+	
+	<% else %>
+
+		<p class="lead">Not found.</p>
+		<%= link_to "Create Category", new_category_path, class: "btn btn-default" %>
+
+	<% end %>
+
+</div><!-- /.content -->
+
+
+
+
+

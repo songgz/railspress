@@ -1,0 +1,17 @@
+
+<%
+# !! CAUTION !!
+# To get image URL, use 'url' mothod. LIKE: model.image.url
+# But for present, alt or anything else,
+# 'image' mothod doesn't exist.
+%>
+
+<% if image.present? %>
+	<div class="thumb">
+		<%= image_tag image.url.sm.url,
+					data: { "image-url" => image.url.url,
+							    "image-id" => image.id },
+					alt: image.alt %>
+	</div>
+<% end %>
+	
