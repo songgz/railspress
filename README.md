@@ -3,7 +3,7 @@ RailsPress
 
 Simple blog application with Rails, heroku and Amazon S3.
 
-See [DEMO](http://rails-press.herokuapp.com/)
+See [DEMO](http://rails-press.herokuapp.com/posts/1)
 
 - Ruby 2.0
 - Ruby on Rails 4.0.1
@@ -37,7 +37,7 @@ See [Deploying with Git](https://devcenter.heroku.com/articles/git)
 #### Amazon S3 account 
 
 ** Access key / Secret Access Key **
-- Create AWS account. [http://aws.amazon.com/](http://aws.amazon.com/)
+- Create an AWS account. [http://aws.amazon.com/](http://aws.amazon.com/)
 - Go to Security Credential and create Access key/Secret Access Key.
 
 ** S3 Bucket Policies **
@@ -46,7 +46,7 @@ See [Deploying with Git](https://devcenter.heroku.com/articles/git)
 - Click 'Permissions' > 'Edit bucket policy.
 - Click [Sample Bucket Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/AccessPolicyLanguage_UseCases_s3_a.html).
 - Copy the code for 'Granting Permission to an Anonymous User'.
-- Paste it into 'Bucket Policy Editor' and edit your backet name like below.
+- Paste it into 'Bucket Policy Editor' and edit your bucket name like below.
 ```
 "Resource": "arn:aws:s3:::YOUR_BUCKET_NAME/*"
 ```
@@ -141,8 +141,7 @@ If you don't want other users, edit 'controllers/users_controller.rb/'
 before_action :signed_in_user,	only: [:new, :create, :index, :show, :edit, :update, :destroy]
 ```
 
-That's it. Althought it takes a bit longer than Wordpress, I'm so confortable to write a blog post with simple markdown format and satisfied with the quick page responce.
-
-
+    
+That's it. Although it takes a bit longer than Wordpress, I'm so comfortable to write a blog post with the simple markdown format and satisfied with the quick page response.
 
 
