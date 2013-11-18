@@ -29,12 +29,6 @@ Railspress::Application.routes.draw do
  # Need to be above get '/:id'
   get 'sitemap', to: redirect(RP_SITEMAP_URL)
 
-  # Customize for Workabroad
-  get 'tech/:id',       to: 'posts#show',            as: :tech
-  get 'lifeabroad/:id', to: 'posts#show',            as: :lifeabroad
-  get 'workabroad/:id', to: 'posts#show',            as: :workabroad
-  get '/:id',           to: 'posts#show',            as: :page
-
   # Latest posts in the category
   get 'category/:id',   to: 'categories#show_in_category', as: :category_in
 
