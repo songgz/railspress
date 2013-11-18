@@ -66,7 +66,7 @@ ready = ->
 				#// Modify URL if CNAME exist
 				url = $('img', this).data('image-url').replace('https', 'http')
 				if "<%= ENV['RP_IMAGE_HOST_CNAME'] %>"
-					url = url.replace("<%= ENV['RP_IMAGE_HOST'] %>", "<%= ENV['RP_IMAGE_HOST_CNAME'] %>")
+					url = url.replace("<%= ENV['RP_AWS_ENDPOINT'] %>", "<%= ENV['RP_IMAGE_HOST_CNAME'] %>")
 				#// Create and insert markdown image tag
 				alt = $('img', this).attr('alt')
 				tag = "![#{alt}](#{url})"

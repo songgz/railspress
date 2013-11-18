@@ -51,7 +51,7 @@ capybara-*.html
 
 # If the source is public
 # ---------------------------------------
-# .secret
-
+.secret
+environment_variables.txt
 
 

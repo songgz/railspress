@@ -3,7 +3,7 @@ module ApplicationHelper
 	# Return full title.
 	# Set <% provide(:title, 'Home') %> in each page.
 	def full_title(page_title)
-		base_title = "Workabroad.jp"
+		base_title = RP_SITENAME
 		if page_title.empty?
 			base_title
 		else

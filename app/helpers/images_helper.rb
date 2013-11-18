@@ -1,8 +1,9 @@
 module ImagesHelper
 	
 	def get_url(path, version)
-		filename = 'workabroad.jpg'
+		filename = "#{RP_IMAGE_NAME}.jpg"
 		path.gsub(filename, "#{version}_#{filename}")
 	end
 
 end
+
