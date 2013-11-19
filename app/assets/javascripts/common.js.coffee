@@ -10,7 +10,6 @@ ready = ->
 					bottom: ->
         		this.bottom = $('.page_footer').outerHeight(true)+30
 	        	#//return this.bottom = $('.page_footer').outerHeight(true)
-		
 
 #// For turbolinks
 $(document).ready(ready)
