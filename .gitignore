@@ -23,3 +23,6 @@ id_rsa_heroku.pub
 
 # Don't ignore robots.txt in your blog.
 # robots.txt
+
+/app/assets/images/*
+/config/routes.rb
