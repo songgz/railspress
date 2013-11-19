@@ -21,4 +21,5 @@ pickle-email-*.html
 id_rsa_heroku
 id_rsa_heroku.pub
 
-robots.txt
+# Don't ignore robots.txt in your blog.
+# robots.txt
