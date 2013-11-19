@@ -23,3 +23,4 @@ id_rsa_heroku
 id_rsa_heroku.pub
 
 robots.txt
+/app/assets/images/*

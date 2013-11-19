@@ -39,11 +39,6 @@ module ApplicationHelper
 		str_array[0]
 	end
 
-	def make_extract_bigger(str)
-		str_array = str.split('<!-- extract -->')
-		"<p class='lead'>#{str_array[0]}</p>#{str_array[1]}"
-	end
-
 	# Use wrap method for text when you want to keep the layout.
 	def wrap(content)
     sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
