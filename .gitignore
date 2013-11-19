@@ -11,7 +11,6 @@ capybara-*.html
 /db/*.sqlite3
 /public/system/*
 /public/upload/*
-/public/assets/*
 /coverage/
 /spec/tmp/*
 **.orig
@@ -20,9 +19,11 @@ pickle-email-*.html
 .project
 .keep
 
-
 id_rsa_heroku
 id_rsa_heroku.pub
 robots.txt
 /app/assets/images/*
 /config/routes.rb
+
+# Don't ignore when deplpying to heroku
+#/public/assets/*
