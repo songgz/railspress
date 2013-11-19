@@ -421,8 +421,12 @@ $menu_height: 50px;
 		border-bottom: 2px dotted lighten($c_pink, 20%);
 		margin-top: 30px;
 	}
-	p.lead {
+	.article_body p.lead {
 		font-size: 1.3em;
+	}
+	.article_body p {
+		font-size: 1.12em;
+		line-height: 1.8em;
 	}
 	.time_ago {
 		color: lighten($c_black, 40%);
