@@ -124,6 +124,11 @@ You need at least Heroku Postgres Add-on.
 git remote add heroku git@heroku.com:YOUR-APP.git
 ```
 
+** Precompile **
+```
+rake assets:precompile
+```
+
 ** Push RailsPress to heroku ** 
 ```
 git push heroku master
