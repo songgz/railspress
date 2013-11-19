@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 		if params[:tag]
 			@posts = Post.tagged_with(params[:tag]).where("published=?", true).paginate(page: params[:page], per_page: 10, total_entries: 80)
 		else
-			@posts = Post.where("published=?", true).paginate(page: params[:page], per_page: 10, total_entries: 80)
+			@posts = Post.where("published=?", true).paginate(page: params[:page], per_page: 10)
 		end
 	end
 
