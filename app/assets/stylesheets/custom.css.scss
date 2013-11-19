@@ -367,6 +367,7 @@ $menu_height: 50px;
 	}
 	h2 {
 		font-size: 1.5em;
+		line-height: 1.4em;
 		@media (min-width: $screen-sm) { font-size: 1.7em; }
 		margin-bottom: 5px;
 		.label {
@@ -419,6 +420,9 @@ $menu_height: 50px;
 		width: 60%;
 		border-bottom: 2px dotted lighten($c_pink, 20%);
 		margin-top: 30px;
+	}
+	p.lead {
+		font-size: 1.3em;
 	}
 	.time_ago {
 		color: lighten($c_black, 40%);
