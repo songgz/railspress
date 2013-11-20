@@ -40,14 +40,13 @@
 			<small><%= link_to "Delete", @post, method: :delete, data: { confirm: "You sure?" } %></small>
 		</div>
 	<% end %>
-
-	<div>
-		<%= render 'google/ad_300px_in_posts' %>
-	</div>
 	
 	<div class="article_body" itemprop="articleBody">
 		<%= markdown @post.content %>
 	</div>
-	
+
+	<div>
+		<%= render 'google/ad_300px_in_posts' %>
+	</div>
 
 </article><!-- ./content -->
