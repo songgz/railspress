@@ -26,4 +26,4 @@ robots.txt
 /config/routes.rb
 
 # Don't ignore when deplpying to heroku
-#/public/assets/*
+/public/assets/*
